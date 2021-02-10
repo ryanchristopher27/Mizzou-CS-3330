@@ -13,17 +13,30 @@ public class Pet {
     public String type;
     private String name;
     public int age;
+    public Gender gender;
     
     // no-arg constructor
     public Pet() {
         // Constructors are special methods, with the same as the class and no return type
+        
+        age = 0;
+    }
+    
+    public Pet(int age) {
+        this.age = age;
+    }
+    
+    public Pet(String type, String name) {        
+        this.type = type;
+        this.name = name;
     }
     
     // parameter constructor
-    public Pet(String type, String name, int age) {
-        this.type = type;
-        this.name = name;
+    public Pet(String type, String name, int age, Gender gender) {
+        this(type, name); // Constructor chaining
+        
         this.age = age;
+        this.gender = gender;
     }
     
     // Getter 
@@ -34,5 +47,17 @@ public class Pet {
     // Setter
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getType() {
+        return this.type;
+    }
+    
+    public void birthday() {
+        age++;
+    }
+    
+    public int getAge() {
+        return age;
     }
 }
