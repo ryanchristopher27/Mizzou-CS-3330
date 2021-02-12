@@ -7,17 +7,20 @@ package rdcb2fgpacalculators21;
 
 // Imports
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -27,7 +30,7 @@ import javafx.stage.Stage;
  * @author Ryan Christopher
  * 
  * @references
- *  1) 
+ *  1) http://www.tutorialsface.com/2016/12/how-to-make-numeric-decimal-textfield-in-javafx-example-tutorial/
  */
 public class Rdcb2fGPACalculatorS21 extends Application {
     
@@ -116,6 +119,140 @@ public class Rdcb2fGPACalculatorS21 extends Application {
         vboxForButtons.getChildren().add(alertButton);
         vboxForButtons.getChildren().add(clearAllButton);
         root.add(vboxForButtons, 0, 6, 2, 1);
+        
+        // Create Alert
+        Alert mainAlert = new Alert(AlertType.NONE);
+        
+        // Create Event Listener so score1 value muust be numerical
+        // Start of Code from Reference 1
+        score1.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score1.getText()) > 100) {
+                    mainAlert.setAlertType(AlertType.ERROR);
+                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.show();
+                    score1.setText("");
+                }
+            }
+        });
+        // Create Event Listener so score2 value must be numerical
+        score2.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score2.getText()) > 100) {
+                    mainAlert.setAlertType(AlertType.ERROR);
+                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.show();
+                    score2.setText("");
+                }
+            }
+        });
+        // Create Event Listener so score3 value must be numerical
+        score3.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score3.getText()) > 100) {
+                    mainAlert.setAlertType(AlertType.ERROR);
+                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.show();
+                    score3.setText("");
+                }
+            }
+        });
+        // Create Event Listener so score4 value must be numerical
+        score4.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score4.getText()) > 100) {
+                    mainAlert.setAlertType(AlertType.ERROR);
+                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.show();
+                    score4.setText("");
+                }
+            }
+        });
+        // End of Code from Reference 1
+        
+        
+        // Create Action for calculateAverageScoreButton
+        calculateAverageScoreButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                
+                // Finds Average of all 4 scores
+                int totalScore = Integer.valueOf(score1.getText()) + Integer.valueOf(score2.getText()) + Integer.valueOf(score3.getText()) + Integer.valueOf(score4.getText());
+                float totalAverage = Float.valueOf(totalScore)/4f;     
+                
+                // Sets TextArea value to display Average Score
+                infoArea.setText("Your Average Score is: ((" + score1.getText() + " + " +
+                        score2.getText() + " + " + score3.getText() + " + " + score4.getText() + ") / " +
+                        "4) = " + totalAverage);
+                
+            }
+        });
+        
+        
+        // Create Action for calculateGPAButton
+        calculateGPAButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                
+                // Finds Average of all 4 scores
+                int totalScore = Integer.valueOf(score1.getText()) + Integer.valueOf(score2.getText()) + Integer.valueOf(score3.getText()) + Integer.valueOf(score4.getText());
+                float totalAverage = Float.valueOf(totalScore)/4f;  
+                
+                if (totalAverage >= 87 && totalAverage <= 100) {
+                    infoArea.setText("Your GPA is: A");
+                }
+                else if (totalAverage >= 77 && totalAverage < 87) {
+                    infoArea.setText("Your GPA is: B");
+                }
+                else if (totalAverage >= 67 && totalAverage < 77) {
+                    infoArea.setText("Your GPA is: C");
+                }
+                else if (totalAverage >= 60 && totalAverage < 67) {
+                    infoArea.setText("Your GPA is: D");
+                }
+                else if (totalAverage >= 0 && totalAverage < 60) {
+                    infoArea.setText("Your GPA is: F");
+                }
+                else {
+                    infoArea.setText("Your GPA could not be found.");
+                }
+            }
+        });
+        
+        
+        // Create Action for AlertButton
+        alertButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                if (infoArea.getText().trim().length() == 0) {
+                    mainAlert.setAlertType(AlertType.ERROR);
+                    mainAlert.setContentText("Information Field is empty.");
+                    mainAlert.show();
+                }
+                else {
+                    mainAlert.setAlertType(AlertType.INFORMATION);
+                    mainAlert.setContentText(infoArea.getText());
+                    mainAlert.show();
+                }
+            }
+        });
+        
+        
+        // Create Action for ClearAllButton
+        clearAllButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent e) {
+                score1.setText("");
+                score2.setText("");
+                score3.setText("");
+                score4.setText("");
+                infoArea.setText("");
+            }
+        });
         
         
         // Create Scene
