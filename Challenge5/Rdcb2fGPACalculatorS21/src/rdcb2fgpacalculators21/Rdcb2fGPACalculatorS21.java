@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Ryan Christopher
+ * Pawprint: rdcb2f
+ * Class: CS 3330 Object Oriented Programming
+ * Date: 2/13/21
  */
 package rdcb2fgpacalculators21;
 
@@ -130,7 +131,7 @@ public class Rdcb2fGPACalculatorS21 extends Application {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score1.getText()) > 100) {
                     mainAlert.setAlertType(AlertType.ERROR);
-                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.setContentText("Insert only integer numbers from 0 to 100");
                     mainAlert.show();
                     score1.setText("");
                 }
@@ -142,7 +143,7 @@ public class Rdcb2fGPACalculatorS21 extends Application {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score2.getText()) > 100) {
                     mainAlert.setAlertType(AlertType.ERROR);
-                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.setContentText("Insert only integer numbers from 0 to 100");
                     mainAlert.show();
                     score2.setText("");
                 }
@@ -154,7 +155,7 @@ public class Rdcb2fGPACalculatorS21 extends Application {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score3.getText()) > 100) {
                     mainAlert.setAlertType(AlertType.ERROR);
-                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.setContentText("Insert only integer numbers from 0 to 100");
                     mainAlert.show();
                     score3.setText("");
                 }
@@ -166,7 +167,7 @@ public class Rdcb2fGPACalculatorS21 extends Application {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d{0,7}([\\.]\\d{0,4})?") || Integer.valueOf(score4.getText()) > 100) {
                     mainAlert.setAlertType(AlertType.ERROR);
-                    mainAlert.setContentText("You must enter a numerical value.");
+                    mainAlert.setContentText("Insert only integer numbers from 0 to 100");
                     mainAlert.show();
                     score4.setText("");
                 }
@@ -230,7 +231,7 @@ public class Rdcb2fGPACalculatorS21 extends Application {
             public void handle(ActionEvent e) {
                 if (infoArea.getText().trim().length() == 0) {
                     mainAlert.setAlertType(AlertType.ERROR);
-                    mainAlert.setContentText("Information Field is empty.");
+                    mainAlert.setContentText("There is nothing to display.");
                     mainAlert.show();
                 }
                 else {

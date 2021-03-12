@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rdcb2fmvctimerstopwatchfxmls21.Rdcb2fMVCTimerStopwatchFXMLDocController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="459.0" minWidth="10.0" prefWidth="231.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.0" minWidth="10.0" prefWidth="233.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0" minWidth="10.0" prefWidth="496.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="113.0" minHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="315.0" minHeight="10.0" prefHeight="253.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="223.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="223.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Label alignment="CENTER" prefHeight="17.0" prefWidth="630.0" text="MVC Timer Stopwatch FXML" textAlignment="CENTER" GridPane.columnSpan="2">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <StackPane fx:id="stopwatchStack" prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <children>
+            <ImageView fx:id="timerClockImage" fitHeight="244.0" fitWidth="313.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@clockface.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="timerHandImage" fitHeight="247.0" fitWidth="335.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@hand.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <Text fx:id="stopWatchTextValue" strokeType="OUTSIDE" strokeWidth="0.0" text="--:--:--.--" textAlignment="CENTER" wrappingWidth="465.13671875" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="timerTextValue" strokeType="OUTSIDE" strokeWidth="0.0" text="--:--:--.--" wrappingWidth="233.13671875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="lapTextValue" strokeType="OUTSIDE" strokeWidth="0.0" text="--:--:--.--" wrappingWidth="232.13671875" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="averageLapTextValue" strokeType="OUTSIDE" strokeWidth="0.0" text="--:--:--.--" wrappingWidth="232.13671875" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="223.0" text="Timer" GridPane.rowIndex="3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="220.0" text="Average Lap Time" GridPane.rowIndex="5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="startStopButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#startStopButtonClicked" prefHeight="25.0" prefWidth="398.0" text="Start" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="50.0" right="50.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="recordResetButton" mnemonicParsing="false" onAction="#recordResetButtonClicked" prefHeight="25.0" prefWidth="418.0" text="Record" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="50.0" right="50.0" />
+         </GridPane.margin>
+      </Button>
+      <LineChart fx:id="lapLineChart" animated="false" title="Record Lap Time" GridPane.columnIndex="2" GridPane.rowSpan="2">
+        <xAxis>
+          <CategoryAxis fx:id="lineChartXAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="lineChartYAxis" autoRanging="false" side="LEFT" upperBound="60.0" />
+        </yAxis>
+      </LineChart>
+      <AreaChart fx:id="averageLapAreaChart" animated="false" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="5">
+        <xAxis>
+          <CategoryAxis fx:id="areaChartXAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="areaChartYAxis" autoRanging="false" side="LEFT" upperBound="60.0" />
+        </yAxis>
+      </AreaChart>
+      <Text fx:id="lapTextLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Lap" textAlignment="RIGHT" wrappingWidth="219.13671875" GridPane.rowIndex="4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</GridPane>

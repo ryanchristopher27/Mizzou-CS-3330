@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rdcb2ffxmlcpumonitors21.Rdcb2fFXMLCPUMonitorS21Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="153.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="156.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="266.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="264.0" minHeight="10.0" prefHeight="199.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="224.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="225.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="225.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="225.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <StackPane fx:id="cpuGuageStack" prefHeight="150.0" prefWidth="200.0" GridPane.columnSpan="2">
+         <children>
+            <ImageView fx:id="cpuGuageImage" fitHeight="185.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@mygauge.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cpuHandImage" fitHeight="190.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true" rotate="195.0">
+               <image>
+                  <Image url="@hand.png" />
+               </image></ImageView>
+         </children></StackPane>
+      <Button fx:id="startStopButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#startStopButtonClicked" prefHeight="30.0" prefWidth="184.0" text="Start" textAlignment="CENTER" GridPane.rowIndex="2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="recordResetButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#recordResetButtonClicked" prefHeight="30.0" prefWidth="206.0" text="Record" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="peakCPUUsageLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="160.0" text="Peak CPU Usage:" textAlignment="CENTER" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="meanCPUUsageLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="158.0" text="Mean CPU Usage:" GridPane.rowIndex="4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <LineChart fx:id="recordedCPUUsageGraph" title="Recorded CPU Usage" GridPane.columnIndex="2">
+        <xAxis>
+          <CategoryAxis fx:id="recordedCPUGraphXAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="recordedCPUGraphYAxis" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <AreaChart fx:id="meanCPUUsageGraph" title="Mean CPU Usage" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="4">
+        <xAxis>
+          <CategoryAxis fx:id="meanCPUGraphXAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="meanCPUGraphYAxis" side="LEFT" />
+        </yAxis>
+      </AreaChart>
+      <Text fx:id="currentCPUUsageValue" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00%" textAlignment="CENTER" wrappingWidth="334.65625" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="peakCPUUsageValue" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00%" textAlignment="CENTER" wrappingWidth="71.65625" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="meanCPUUsageValue" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00%" textAlignment="CENTER" wrappingWidth="72.7421875" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</GridPane>
