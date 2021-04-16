@@ -1,12 +1,14 @@
 package rdcb2fhelloworlds21;
 
 // Imports for Reference 1
+import RGB;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;  
 
 // Imports for Reference 2
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
  * @author Ryan Christopher
@@ -21,10 +23,13 @@ public class Rdcb2fHelloWorldS21 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int myCourseNum = 3330;
+//        int myCourseNum = 3330;
         
-        System.out.println("Hello World!");               
-        InvokeMe(myCourseNum);
+//        System.out.println("Hello World!");               
+//        InvokeMe(myCourseNum);
+        
+        ArrayList<Object> list = new ArrayList<int>();
+
     }
     
     public static void InvokeMe(int num) {
@@ -41,5 +46,17 @@ public class Rdcb2fHelloWorldS21 {
 	String stringDate2 = sdf2.format(new Date());
 	System.out.println("Today is: "+stringDate2);
         // End of code for Reference 2
+        
+        ArrayList names = new ArrayList();
+        
+        names.add("Sir");
+        names.add("Madam");
+        names.add("Friend");
+        
+        for (int i = 2; i < names.size(); i++) {
+            names.add(i, "+");
+        }
+        
+    
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="threadplayground.UserInterfaceController">
+    <stylesheets>
+        <URL value="@userinterface.css" />
+    </stylesheets>
+   <children>
+      <TextArea fx:id="textArea1" layoutX="25.0" layoutY="23.0" prefHeight="175.0" prefWidth="133.0" />
+      <TextArea fx:id="textArea2" layoutX="167.0" layoutY="23.0" prefHeight="175.0" prefWidth="133.0" />
+      <TextArea fx:id="textArea3" layoutX="309.0" layoutY="24.0" prefHeight="175.0" prefWidth="133.0" />
+      <Button layoutX="68.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleStart1" text="Start" />
+      <Button layoutX="68.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleStop1" text="Stop" />
+      <Button layoutX="210.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleStart2" text="Start" />
+      <Button layoutX="210.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleStop2" text="Stop" />
+      <Button layoutX="352.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleStart3" text="Start" />
+      <Button layoutX="352.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleStop3" text="Stop" />
+      <Button layoutX="64.0" layoutY="243.0" mnemonicParsing="false" onAction="#handlePause1" text="Pause" />
+      <Button layoutX="206.0" layoutY="243.0" mnemonicParsing="false" onAction="#handlePause2" text="Pause" />
+      <Button layoutX="348.0" layoutY="243.0" mnemonicParsing="false" onAction="#handlePause3" text="Pause" />
+      <TextArea fx:id="textArea4" layoutX="451.0" layoutY="23.0" prefHeight="175.0" prefWidth="133.0" />
+      <Button layoutX="494.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleStart4" text="Start" />
+      <Button layoutX="494.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleStop4" text="Stop" />
+      <Button layoutX="490.0" layoutY="243.0" mnemonicParsing="false" onAction="#handlePause4" text="Pause" />
+   </children>
+</AnchorPane>
