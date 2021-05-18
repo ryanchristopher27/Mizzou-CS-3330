@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: royalblue;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rdcb2fmovielists21.FXMLAboutMeController">
+    <stylesheets>
+        <URL value="@fxmlAboutMeStyle.css" />
+    </stylesheets>
+   <children>
+      <Text layoutX="79.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: lightgray; -fx-stroke: black; -fx-stroke-width: 1px;" text="About Me" textAlignment="CENTER" wrappingWidth="742.021484375">
+         <font>
+            <Font name="Constantia Bold" size="48.0" />
+         </font>
+      </Text>
+      <Button fx:id="backToMovieListButton" layoutX="79.0" layoutY="44.0" mnemonicParsing="false" onAction="#goToA" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: lightgray; -fx-background-radius: 5px; -fx-border-color: black; -fx-border-radius: 5px;" text="Movie List">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font></Button>
+      <Button layoutX="676.0" layoutY="44.0" mnemonicParsing="false" onAction="#goToB" prefHeight="37.0" prefWidth="145.0" style="-fx-background-color: lightgray; -fx-background-radius: 5px; -fx-border-color: black; -fx-border-radius: 5px;" text="Movie Selector">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font></Button>
+      <VBox layoutX="111.0" layoutY="162.0" prefHeight="360.0" prefWidth="253.0" style="-fx-border-color: black; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-background-color: lightgray; -fx-background-radius: 15px;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ryan Christopher" textAlignment="CENTER" wrappingWidth="252.13671875">
+               <font>
+                  <Font name="Constantia Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="My name is Ryan Christopher and I am currently a sophomore here at Mizzou. I am pursuing a degree in Computer Science and I plan on doing the 5-year Masters Program as well. I am from Springfield, MO and I grew up loving to play sports, but also loving technology and gaming just as much!" textAlignment="CENTER" wrappingWidth="250.13671875">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+      <VBox layoutX="449.0" layoutY="162.0" prefHeight="360.0" prefWidth="349.0" style="-fx-border-color: black; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-background-color: lightgray; -fx-background-radius: 15px;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Movie List" textAlignment="CENTER" wrappingWidth="341.13671875">
+               <font>
+                  <Font name="Constantia Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Movie List is a program that is meant to act as a long-term movie library. On the main page of the program, there is an area that displays all the movies that you have saved prior. There is also a section that allows you to enter a new movie including its genre and rating as well. On the movie selector page, you can select a genre. Then a random movie of the specified genre will be selected from the movie list and be displayed on the right. I hope you enjoy your experience using the Movie List!" textAlignment="CENTER" wrappingWidth="324.13671875">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

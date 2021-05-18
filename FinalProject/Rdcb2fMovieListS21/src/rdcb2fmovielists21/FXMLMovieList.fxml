@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: royalblue;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rdcb2fmovielists21.FXMLMovieListController">
+    <stylesheets>
+        <URL value="@fxmlMovieListStyle.css" />
+    </stylesheets>
+   <children>
+      <Text layoutX="251.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: lightgray; -fx-stroke: black; -fx-stroke-width: 1px;" text="Movie List" textAlignment="CENTER" wrappingWidth="398.13671875">
+         <font>
+            <Font name="Constantia Bold" size="64.0" />
+         </font>
+      </Text>
+      <VBox layoutX="73.0" layoutY="113.0" prefHeight="400.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-background-color: lightgray; -fx-background-radius: 15px;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Insert New Movie" textAlignment="CENTER" wrappingWidth="210.13671875">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label alignment="BOTTOM_CENTER" prefHeight="60.0" prefWidth="211.0" text="Movie Title">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="movieTitleInput" promptText="Enter Movie Title Here" style="-fx-border-color: black; -fx-border-radius: 5px; -fx-background-color: white; -fx-background-radius: 5px;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Constantia" size="12.0" />
+               </font></TextField>
+            <Label alignment="BOTTOM_CENTER" prefHeight="78.0" prefWidth="211.0" text="Movie Genre">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="movieGenreInput" prefHeight="25.0" prefWidth="214.0" style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-color: black;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin></ChoiceBox>
+            <Label alignment="BOTTOM_CENTER" prefHeight="82.0" prefWidth="211.0" text="Movie Rating">
+               <font>
+                  <Font name="Constantia" size="18.0" />
+               </font>
+            </Label>
+            <Slider fx:id="movieRatingInput" prefHeight="30.0" prefWidth="0.0" style="-fx-background-color: lightgray;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin></Slider>
+            <Text fx:id="movieRatingValue" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="208.13671875">
+               <font>
+                  <Font name="Cambria" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Text>
+            <Button fx:id="movieSubmitButton" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="215.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Submit Movie">
+               <font>
+                  <Font name="Constantia Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="407.0" layoutY="113.0" prefHeight="400.0" prefWidth="400.0" style="-fx-border-color: black; -fx-border-radius: 15px 15px 0 0; -fx-border-width: 2px; -fx-background-color: lightgray; -fx-background-radius: 15px;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Movie List" textAlignment="CENTER" wrappingWidth="398.13671875">
+               <font>
+                  <Font name="Constantia" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="47.0" prefWidth="400.0">
+               <children>
+                  <Label alignment="BOTTOM_CENTER" prefHeight="23.0" prefWidth="136.0" text="Select Genre">
+                     <font>
+                        <Font name="Constantia" size="18.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="selectedGenreInput" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-color: black;">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin></ChoiceBox>
+                  <Button fx:id="genreInputButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-color: black; -fx-border-radius: 5px;" text="Show Movies">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Constantia" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ListView fx:id="movieListDisplay" prefHeight="317.0" prefWidth="399.0" style="-fx-background-color: lightgray; -fx-border-color: black; -fx-border-width: 2px 0 0 0;" />
+         </children>
+      </VBox>
+      <Button layoutX="73.0" layoutY="32.0" mnemonicParsing="false" onAction="#goToA" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: lightgray; -fx-background-radius: 5px; -fx-border-color: black; -fx-border-radius: 5px;" text="About Me">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="679.0" layoutY="32.0" mnemonicParsing="false" onAction="#goToB" prefHeight="35.0" prefWidth="147.0" style="-fx-background-color: lightgray; -fx-background-radius: 5px; -fx-border-color: black; -fx-border-radius: 5px;" text="Movie Selector">
+         <font>
+            <Font name="Constantia" size="18.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="517.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Double Click Movie To Delete">
+         <font>
+            <Font name="Constantia" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

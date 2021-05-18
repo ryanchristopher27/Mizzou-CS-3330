@@ -85,6 +85,7 @@ public class Controller implements Initializable, PropertyChangeListener {
         
         
         if(evt.getPropertyName().equals("Analog")){
+            System.out.println("test");
             hand.setRotate(Double.parseDouble(evt.getNewValue().toString()));
         }
         else if(evt.getPropertyName().equals("Digital")){
